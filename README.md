@@ -1,1 +1,1 @@
-# dumpq1.0
+# This is a simple react contact list application showing react-redux example
