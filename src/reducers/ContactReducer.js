@@ -9,7 +9,8 @@ export const INITIAL_STATE = {
 export default function ContactReducer(state, action) {
   switch (action.type) {
     case ACTION_TYPES.ADD_PERSON:
-      return state + action.data;
+      state.contacts.push(action.payload);
+      return { contacts: state.contacts };
     default:
       return state;
   }

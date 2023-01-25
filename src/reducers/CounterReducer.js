@@ -9,9 +9,11 @@ export const INITIAL_STATE = {
 function CounterReducer(state = 0, action) {
   switch (action.type) {
     case ACTION_TYPES.INCREMENT:
-      return state + action.payload;
+      state.counter += action.payload;
+      return { counter: state.counter };
     case ACTION_TYPES.DECREMENT:
-      return state - action.payload;
+      state.counter -= action.payload;
+      return { counter: state.counter };
     default:
       return state;
   }

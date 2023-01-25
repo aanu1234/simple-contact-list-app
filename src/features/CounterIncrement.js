@@ -7,17 +7,25 @@ function CounterIncrement() {
   const [state, dispatch] = useReducer(CounterReducer, INITIAL_STATE);
 
   return (
-    <>
-      <p>{state.counter}</p>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: "4rem",
+      }}
+    >
       <Button
-        text="Increment"
-        onClick={() => dispatch({ type: ACTION_TYPES.INCREMENT, payload: 1 })}
-      />
-      <Button
-        text="Decrement"
+        className="btn"
+        text="<"
         onClick={() => dispatch({ type: ACTION_TYPES.DECREMENT, payload: 1 })}
       />
-    </>
+      <span className="counter">{state.counter}</span>
+      <Button
+        className="btn"
+        text=">"
+        onClick={() => dispatch({ type: ACTION_TYPES.INCREMENT, payload: 1 })}
+      />
+    </div>
   );
 }
 
